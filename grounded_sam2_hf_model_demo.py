@@ -205,7 +205,7 @@ def main():
 
     box_annotator = sv.BoxAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP))
     annotated = box_annotator.annotate(scene=img_bgr.copy(), detections=detections)
-    label_annotator = sv.LabelAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP))
+    label_annotator = sv.LabelAnnotator(color=ColorPalette.from_hex(CUSTOM_COLOR_MAP), text_scale=2.0, text_thickness=2)
     annotated = label_annotator.annotate(scene=annotated, detections=detections, labels=labels_vis)
     cv2.imwrite(os.path.join(OUTPUT_DIR, "groundingdino_annotated_image.jpg"), annotated)
 
